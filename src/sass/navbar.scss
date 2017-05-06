@@ -1,0 +1,121 @@
+@import "./style.scss";
+
+.navbar__container {
+  z-index: 6;
+  height: $navbarheight;
+  width: calc(100% - 300px);
+  background: white;
+  color: $font-dark;
+  position: fixed;
+  right: 0px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  a {
+    text-decoration: none;
+    color: $font-dark;
+  }
+}
+
+navbar__left {
+  width: 150px;
+}
+
+#navbar__right {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 15px;
+  position: relative;
+}
+
+.navbar__link {
+  margin: 0px 10px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.display__container {
+  position: fixed;
+  height: 40px;
+  top: $navbarheight;
+  width: calc(100% - 300px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top: 1px solid lighten($outline, 30%);
+  background: white;
+  min-width: 340px;
+
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+
+  a {
+    text-decoration: none;
+    color: $font-dark;
+    flex: 1 1 auto;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.15s ease-in-out;
+    font-size: 1.1rem;
+  }
+}
+
+.display__link {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background: white;
+  transition: background 0.15s ease-in-out;
+
+  &:hover {
+    background: $font-dark;
+    color: white;
+
+    .display__label {
+    transition: background 0.15s ease-in-out;
+    background: $font-dark;
+    }
+  }
+}
+
+.display__label {
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: white;
+  transition: background 0.15s ease-in-out;
+}
+
+.display__link-active {
+  position: relative;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  background: transparent;
+
+  .display_triangle {
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    top: 28px;
+    background: white;
+
+    text-align: center;
+    transform: rotate(45deg);
+
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+}

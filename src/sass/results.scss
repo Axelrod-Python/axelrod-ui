@@ -1,0 +1,111 @@
+@import "./style.scss";
+
+.not_implemented__container {
+  text-align: center;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.results__container {
+  width: 100%;
+  background: white;
+
+  .content__description {
+    text-transform: capitalize;
+  }
+
+  .spacer {
+    margin-left: 30px;
+  }
+}
+
+.results__info-container {
+  margin: 25px 25px 0px 25px;
+}
+
+.results__info {
+  flex: 1 1 auto;
+
+  h3 {
+    margin: 5px 0px;
+    text-transform: capitalize;
+  }
+}
+
+.results__loader {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.results__charts {
+  margin: 15px 25px 0px 25px;
+}
+
+.result_panel__container {
+  border: 1px solid $primary;
+  margin: 15px 0px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.result_panel__header {
+  cursor: pointer;
+  position: relative;
+  background: $primary;
+  color: white;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.result_panel__icon {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  font-size: 2rem;
+}
+
+.result_panel__child {
+  transition: max-height 0.15s ease-out;
+}
+
+.definition_info__parameters {
+  padding: 15px;
+}
+
+.results__players {
+  padding: 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+
+  height: 200px;
+
+  div {
+    flex: 1 1 auto;
+  }
+}
+
+.definition_parameter__label {
+  text-transform: capitalize;
+  margin-right: 5px;
+}
+
+.results__winner {
+  font-size: 1.1rem;
+}
+
+.results__players {
+  height: 100px;
+  overflow-y: auto;
+}
+
+#violin_chart__container {
+  width: 100%;
+}
+
+.results__chart {
+  position: inline;
+}

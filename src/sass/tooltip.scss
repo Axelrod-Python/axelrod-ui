@@ -1,0 +1,23 @@
+@import "./style.scss";
+
+@mixin tooltip() {
+  background: white;
+  padding: 5px 10px;
+  border: 1px solid $primary;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space:nowrap;
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+/** Tooltips */
+.tooltip__small {
+  @include tooltip();
+  height: 25px;
+  opacity: 0;
+
+  transition: opacity 0.5s ease-in-out;
+}

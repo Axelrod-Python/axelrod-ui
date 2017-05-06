@@ -1,0 +1,73 @@
+@import "./style.scss";
+
+/** results container */
+.result_list__container {
+  flex: 1 1 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  background: white;
+}
+
+
+.result_list__table {
+  flex: 1 1 auto;
+  @include content-container();
+  margin-top: 25px;
+}
+
+.result_list__header {
+  cursor: default !important;
+  font-weight: bold;
+  background: white !important;
+}
+
+.result_list__row {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px 10px;
+  color: $font-dark;
+  text-decoration: none;
+
+  &:nth-child(even) {
+    background: lighten($header, 65%);
+  }
+
+  &:hover {
+    background: lighten($outline, 15%);
+  }
+}
+
+.result_list__column {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.result_list__column:nth-child(1) {
+  width: 25%;
+  text-transform: capitalize;
+}
+
+.result_list__column:nth-child(2) {
+  width: 10%;
+}
+
+.result_list__column:nth-child(3) {
+  width: 25%;
+}
+
+.result_list__column:nth-child(4) {
+  width: 125px;
+}
+
+.result_list__column:nth-child(5) {
+  margin-left: 25px;
+  width: calc(40% - 125px);
+}
+/* end results */

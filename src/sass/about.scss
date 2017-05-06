@@ -1,0 +1,15 @@
+.about__container {
+  background: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.about__inner-container {
+  max-width: 800px;
+  margin: 0px 60px;
+
+  li {
+    list-style: none;
+  }
+}

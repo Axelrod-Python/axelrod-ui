@@ -1,0 +1,118 @@
+@import "./style.scss";
+
+.strategy_list__container {
+  position: fixed;
+  width: 290px;
+  padding-right: 10px;
+  background: $primary;
+  opacity: 0.8;
+}
+
+.strategy_list_item__container {
+  padding: 5px 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $outline;
+  font-weight: bold;
+
+  &:nth-child(even) {
+    background: lighten($primary, 2%);
+  }
+
+  &:hover {
+    color: $font-light;
+    .strategy_list_item__info {
+      opacity: 1;
+    }
+  }
+}
+
+.strategy_list_item__title {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.strategy_list_item__info {
+  opacity: 0;
+  margin-right: 5px;
+  padding: 6px;
+  color: #999;
+
+  transition: 0.35s ease-in-out;
+
+}
+
+.strategy_list_item__info:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+/** 
+panel that displays strategy specific
+information in a pop up menu next to
+the strategy list 
+*/
+.strategy_info__container {
+  z-index: 10;
+  position: fixed;
+  box-shadow: $boxshadow;
+  background: $secondary;
+  width: 350px;
+  padding-bottom: 20px;
+
+  h3 {
+    margin: 0px;
+    text-align: center;
+  }
+}
+
+.strategy_info__close {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition: 0.15s ease-in-out;
+
+  &:hover {
+    color: $outline;
+    transform: scale(1.1);
+  }
+}
+
+.strategy_info__title {
+  background: $header;
+  color: $secondary;
+  padding: 10px 5px;
+  font-size: 1.25rem;
+}
+
+.strategy_info__description {
+  word-wrap: break-word;
+  font-size: 0.9rem;
+  padding: 5px 20px;
+  color: $font-dark;
+}
+
+.strategy_info__classifier {
+  padding: 0px 20px;
+  color: $font-dark;
+}
+
+.strategy_info__json {
+  margin-left: 15px;
+  white-space: pre;
+  font-family: monospace;
+  color: $font-dark;
+}
+
+.strategy_info__arguments {
+  padding: 0px 20px 20px 20px;
+  color: $font-dark;
+}
+
+.strategy_info__args {
+  margin-left: 15px;
+}

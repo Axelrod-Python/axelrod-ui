@@ -1,0 +1,113 @@
+$primary: #1B2838;
+$secondary: white;
+
+$outline: #6D7276;
+$header: #2C3643;
+$font-dark: darken($primary, 5%);
+$font-light: #fff;
+
+$navbarheight: 50px;
+
+$boxshadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.24);
+
+body, html {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: url(https://res.cloudinary.com/dvr87tqip/image/upload/v1493857890/grid_xpql7s.png);
+  min-width: 700px;
+}
+
+input {
+  font-size: 1.1rem;
+  padding: 10px 10px;
+  border: 1px solid $outline;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  text-transform: uppercase;
+  background: $primary;
+  border: 1px solid $primary;
+  color: $font-light;
+  font-size: 0.9rem;
+  padding: 10px 30px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+
+  transition: 0.15s ease-in-out;
+}
+
+button:hover {
+  background: darken($primary, 5%);
+}
+
+button:focus {
+  outline: none;
+}
+
+@mixin content-container() {
+  width: 100%;
+  background: white;
+
+  @media(min-width: 1000px) {
+    max-width: 1000px;
+  }
+}
+
+.main__container {
+  display: flex;
+}
+
+.main__content-container {
+  margin: 90px 0px 0px 300px;
+  min-height: calc(100vh - 90px);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.content__description {
+  flex: 1 1 auto;
+  width: 100%;
+  background: white;
+  max-height: 50px;
+
+  h4 {
+    flex: 1 1 auto;
+    margin: 0px;
+    background: $primary;
+    color: $font-light;
+    padding: 20px 50px;
+    opacity: 0.5;
+  }
+}
+
+
+
+
+
+
+  svg {
+    font: 10px sans-serif;
+  }
+  .bar rect {
+    fill: steelblue;
+    shape-rendering: crispEdges;
+  }
+  .axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  .line {
+    fill: none;
+    stroke: purple;
+    stroke-width: 1.5px;
+  }

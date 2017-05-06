@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "experimentalDecorators": true,
+        "target": "es5",
+        "module": "commonjs",
+        "jsx": "react",
+        "sourceMap": true,
+        "alwaysStrict": true,
+        "declaration": false,
+        "noImplicitAny": true,
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "types": [
+            "node",
+            "react",
+            "react-dom"
+        ]
+    },
+    "exclude": [
+        "dist",
+        "coverage",
+        "node_modules"
+    ]
+}

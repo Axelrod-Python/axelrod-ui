@@ -1,0 +1,174 @@
+@import "./style.scss";
+
+.interface__container {
+  flex: 1 1 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  background: white;
+}
+
+.interface__inner-container {
+  width: 90%;
+  max-width: 1000px;
+  margin-top: 25px;
+}
+
+/** strategy container */
+.strategy_container__container {
+  padding: 25px;
+  min-height: 100px;
+  max-height: 400px;
+  overflow-y: auto;
+  text-align: center;
+
+  transition: 0.15s ease-in-out;
+}
+
+.strategy_container__target {
+  background: darken(whitesmoke, 10%);
+  border: 3px dashed #999;
+}
+
+/* end strategy container **/
+
+
+/** active strategy inside strategy container */
+.active_strategy__container {
+  border: 1px solid $primary;
+  padding: 5px;
+  margin-bottom: 5px;
+  background: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+.active_strategy__left {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.active_strategy__name {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.active_strategy__args {
+  margin-left: 15px;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+
+  input {
+    height: 25px;
+    font-size: 0.8rem;
+    width: 40px;
+    padding-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+.active_strategy__close {
+  margin-right: 0px;
+
+  button {
+    box-shadow: none;
+    background: none;
+    border: none;
+    color: black;
+
+    &:hover {
+      color: $outline;
+      background: none;
+    }
+  }
+}
+
+.arg_input__container {
+
+  span {
+    text-transform: capitalize;
+    margin-right: 2px;
+  }
+
+  input {
+    font-size: 0.75rem;
+    width: 30px;
+    padding: 4px 5px;
+    text-align: center;
+  }
+}
+/* end **/
+
+/** Contest Parameter list */
+.interface__contest-param {
+  display: flex;
+  flex-direction: row;
+  padding: 1px 0px;
+
+  input {
+    width: 40px;
+    text-align: center;
+  }
+}
+
+.interface__contest-param-label {
+  text-transform: capitalize;
+  width: 115px;
+}
+
+/** submit styling */
+.submit__container {
+  margin-top: 5px;
+
+  button {
+    margin-right: 5px;
+  }
+}
+
+.submit__error-container {
+  margin-top: 15px;
+  color: red;
+  font-size: 1.1rem;
+  text-align: center;
+
+  .material-icons {
+    font-size: 50px;
+  }
+}
+
+.submit__success-container {
+  margin-top: 5px;
+  color: green;
+  font-size: 1.1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+
+  .material-icons {
+    font-size: 50px;
+  }
+
+  a {
+    color: $header;
+  }
+}
+
+.errors__container {
+
+  .material-icons {
+    font-size: 50px;
+  }
+}
+/* end **/

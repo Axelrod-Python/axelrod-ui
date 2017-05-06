@@ -1,0 +1,106 @@
+@import "./style.scss";
+
+
+.strategy_filter__container {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.strategy_filter__filters-container {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+.strategy_filter__search {
+  color: $outline;
+  margin-top: 8px;
+  font-size: 1.85rem;
+}
+
+.strategy_filter__toggle {
+  font-size: 2.3rem;
+  transition: 0.15s ease-in-out;
+  color: $outline;
+  margin-right: 10px;
+}
+
+.strategy_filter__toggle:hover {
+  color: $font-light;
+}
+
+.strategy_filter_panel__container {
+  z-index: 10;
+  position: fixed;
+  background: $secondary;
+  padding: 0px 25px 35px 25px;
+  width: 180px;
+  box-shadow: $boxshadow;
+
+  h4 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+}
+
+.strategy_filter_panel__filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+
+  #filter__name {
+    position: relative;
+    right: auto;
+    width: calc(100% - 15px);
+    border-bottom: 1px solid $outline;
+
+    input {
+      width: calc(100% - 15px);
+      padding: 10px 15px 3px 5px;
+      background: none;
+      border: none;
+      color: $font-light;
+      text-align: left !important;
+    }
+  }
+
+  .strategy_filter_panel__value {
+    position: absolute;
+    right: 10px;
+
+    input {
+      width: 25px;
+      text-align: center;
+    }
+
+    input[type="checkbox"] {
+      transform: scale(1.5);
+    }
+  }
+}
+
+.filter__below {
+  position: relative;
+  display: block;
+  flex-direction: column !important;
+  margin-left: 0px !important;
+
+  input {
+    width: 100% !important;
+    text-align: left !important;
+  }
+}
+
+.strategy_filter_checkbox_disabled {
+  font-size: 1.5rem;
+  width: 20px;
+  cursor: pointer;
+  padding: 0px 5px;
+}
