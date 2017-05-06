@@ -1,9 +1,9 @@
 {
-  "name": "webapp",
-  "version": "1.2.0",
-  "description": "React Boilerplate with support for Redux, TypeScript, Hot Reloading, Routing, Isomorphic rendering, TSLint, SASS, Testing",
+  "name": "axelrod-ui",
+  "version": "0.1.0",
+  "description": "User Interface for the Axelrod Python library - built with React/Redux & TypeScript",
   "main": "index.tsx",
-  "repository": "https://github.com/kiresuah/ReactTypeScript",
+  "repository": "https://github.com/erik-sn/axelrod-ui",
   "scripts": {
     "new": "ts-node ./config/new_component.ts",
     "dev": "ts-node ./config/server.ts",
