@@ -5,10 +5,13 @@ import { Link, Route, Switch, withRouter } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 
 import { fetchMatches, fetchMoranProcesses, fetchStrategies,
-  fetchTournaments } from '../actions/index';
+  fetchTournaments, initializeStrategies } from '../actions/index';
 import { IAction } from '../constants/interfaces';
 import Main from './main';
 import Navbar from './navbar';
+import Strategy from "../models/strategy";
+
+declare const window: any;
 
 export interface IApplicationProps {
   fetchStrategies?: () => IAction;
@@ -16,6 +19,7 @@ export interface IApplicationProps {
   fetchMoranProcesses?: () => IAction;
   fetchTournaments?: () => IAction;
   fetchContests?: () => IAction;
+  initializeStrategies?: (strategies: Strategy[]) => IAction;
 }
 
 class Application extends React.Component<IApplicationProps, {}> {
@@ -23,8 +27,18 @@ class Application extends React.Component<IApplicationProps, {}> {
   public componentDidMount() {
     this.props.fetchMatches();
     this.props.fetchMoranProcesses();
-    this.props.fetchStrategies();
     this.props.fetchTournaments();
+
+    if (window.__STRATEGIES__) {
+      this.props.initializeStrategies(window.__STRATEGIES__ as Strategy[]);
+    } else {
+      this.props.fetchStrategies();
+    }
+
+    const loader = document.getElementById('app-loader');
+    if (loader) {
+      loader.remove();
+    }
   }
 
   public render() {
@@ -47,4 +61,5 @@ export default withRouter(connect<{}, {}, any> (mapStateToProps, {
   fetchMoranProcesses,
   fetchStrategies,
   fetchTournaments,
+  initializeStrategies,
 })(Application));
