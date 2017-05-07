@@ -54,7 +54,7 @@ class StrategyList extends React.Component<IStrategyListProps, IStrategyListStat
   }
 
   public handleResize() {
-    const containerHeight = window.innerHeight - 55;
+    const containerHeight = window.innerHeight - 48;
     this.setState({ containerHeight });
   }
 
