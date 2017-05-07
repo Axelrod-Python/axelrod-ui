@@ -27,10 +27,11 @@ class Application extends React.Component<IApplicationProps, {}> {
     this.props.fetchMatches();
     this.props.fetchMoranProcesses();
     this.props.fetchTournaments();
+    this.props.fetchStrategies();
 
-    if (!window.__PRELOADED_STATE__) {
-      this.props.fetchStrategies();
-    }
+    // if (!window.__PRELOADED_STATE__) {
+    //   this.props.fetchStrategies();
+    // }
 
     // remove the application loader from the dom
     const loader = document.getElementById('app-loading');
