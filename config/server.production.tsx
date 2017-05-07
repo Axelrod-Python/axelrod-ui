@@ -27,8 +27,7 @@ app.use(compression()); // compress compatible files for quicker client load tim
 app.use(logger('dev')); // log content
 
 // Set path to public assets
-app.use('/static', express.static('dist'));
-app.use('/dist', express.static('dist'));
+app.use('/axelrod/static', express.static('dist'));
 
 /**
  * For every request send the URL to React Router The router will return the content that should be
@@ -109,7 +108,7 @@ function renderFullPage(html: string, initialStore: Store<any>): string {
         >
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="/static/bundle.min.css">
+        <link rel="stylesheet" href="/axelrod/static/bundle.min.css">
       </head>
       <body id="app-body">
         <div id="app-container">${html}</div>
@@ -127,7 +126,7 @@ function renderFullPage(html: string, initialStore: Store<any>): string {
       <script>
         window.__PRELOADED_STATE__ = ${JSON.stringify(initialStore.getState()).replace(/</g, '\\u003c')}
       </script>
-      <script src="/static/bundle.min.js"></script>
+      <script src="/axelrod/static/bundle.min.js"></script>
     </html>
   `;
 }
