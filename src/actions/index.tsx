@@ -15,13 +15,6 @@ export function fetchStrategies(): IAction {
   };
 }
 
-export function initializeStrategies(strategies: Strategy[]): IAction {
-  return {
-    payload: strategies,
-    type: ACTIONS.INITIALIZE_STRATEGIES,
-  };
-}
-
 export function fetchMatches(): IAction {
   const request = axios.get(`${API}/matches/`, API_CONFIG);
   return {

@@ -49,21 +49,37 @@ app.use('/', (req: any, res: any) => {
     } else {
       res.header('Content-Type', 'text/html; charset=utf-8');
       axios.get(`${API}/strategies/`).then((response: any) => {
-        res.write(renderFullPage('', response.data as Strategy[]));
+        const strategies: Strategy[] = response.data.map((s: any) => new Strategy(s));
+        const store = createInitialStore(strategies);
+        // const html = generateHtml(req, store);
+        res.write(renderFullPage('', store));
+        res.end();
+      })
+      .catch((err: any) => {
+        console.error(err);
+        res.status(500);
         res.end();
       });
     }
 });
 
-function generateHtml(req: any): string {
-  const createStoreWithMiddleware = applyMiddleware()(createStore);
-  return renderToString(
-    <Provider store={createStoreWithMiddleware(reducers)} >
-      <StaticRouter location={req.url} context={context} >
-        <Application />
-      </StaticRouter>
-    </Provider>,
-  );
+
+function createInitialStore(strategies: Strategy[]): Store<any> {
+    const createStoreWithMiddleware = applyMiddleware()(createStore);
+    const data: any = {
+      strategy: { strategies, filters: {} }
+    };
+    return createStoreWithMiddleware(reducers, data);
+}
+
+function generateHtml(req: any, store: Store<any>): string {
+    return renderToString((
+      <Provider store={store} >
+        <StaticRouter location={req.url} context={context} >
+          <Application />
+        </StaticRouter>
+      </Provider >
+    ));
 }
 
 // create server based on application configuration
@@ -78,7 +94,7 @@ server.listen(PORT);
  * @param {string} html - react component to be rendered
  * @return {string} full html page
  */
-function renderFullPage(html: string, strategies: Strategy[]): string {
+function renderFullPage(html: string, initialStore: Store<any>): string {
   return `
     <!doctype html>
     <html>
@@ -109,7 +125,7 @@ function renderFullPage(html: string, strategies: Strategy[]): string {
         }, 100);
       </script>
       <script>
-        window.__STRATEGIES__ = ${JSON.stringify(strategies).replace(/</g, '\\u003c')}
+        window.__PRELOADED_STATE__ = ${JSON.stringify(initialStore.getState()).replace(/</g, '\\u003c')}
       </script>
       <script src="/static/bundle.min.js"></script>
     </html>

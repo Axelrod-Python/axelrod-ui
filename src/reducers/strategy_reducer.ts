@@ -20,11 +20,6 @@ export const initialState: IStrategyReducer = {
 
 export default (state: IStrategyReducer = initialState, action: IAction) => {
   switch (action.type) {
-    case ACTIONS.INITIALIZE_STRATEGIES:
-      return Object.assign({}, {
-        ...state,
-        strategies: action.payload.map((object: any) => new Strategy(object)),
-      });
     case ACTIONS.FETCH_STRATEGIES:
       return Object.assign({}, {
         ...state,
