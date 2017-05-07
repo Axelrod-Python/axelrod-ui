@@ -14,7 +14,7 @@ import Strategy from "./models/strategy";
 
 // tslint:disable-next-line:no-var-requires
 const { createBrowserHistory } = require('history'); // temporary until type definitions are worked out
-const history = createBrowserHistory();
+const history = createBrowserHistory({ basename: '/axelrod' });
 const middleware = routerMiddleware(history);
 
 const createStoreWithMiddleware = applyMiddleware(middleware, promise)(createStore);
@@ -51,7 +51,7 @@ if (process.env.NODE_ENV === 'production') {
 
 const App = () => (
   <Provider store={store}>
-    <ConnectedRouter history={history} >
+    <ConnectedRouter history={history} basename="/axelrod/" >
       <Application />
     </ConnectedRouter>
   </Provider>
