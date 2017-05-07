@@ -13,7 +13,8 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-left: 2px;
+  margin-left: 10px;
+  padding: 2px;
 }
 
 .strategy_filter__search {
@@ -40,6 +41,7 @@
   padding: 0px 25px 35px 25px;
   width: 180px;
   box-shadow: $boxshadow;
+  border: 1px solid $primary;
 
   h4 {
     text-align: center;
@@ -55,15 +57,20 @@
   width: 100%;
   height: 50px;
 
+  .strategy_filter__search {
+    margin-left: 10px;
+  }
+
   #filter__name {
     position: relative;
     right: auto;
-    width: calc(100% - 15px);
+    width: calc(100% - 35px);
     border-bottom: 1px solid $outline;
 
     input {
-      width: calc(100% - 15px);
-      padding: 10px 15px 3px 5px;
+      padding: 0px 15px 3px 5px;
+      margin-right: 15px;
+      width: 100%;
       background: none;
       border: none;
       color: $font-light;

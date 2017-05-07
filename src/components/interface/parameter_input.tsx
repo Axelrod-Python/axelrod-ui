@@ -26,7 +26,6 @@ const ParameterInput = ({ param, handleChange, value }: IParameterInputProps) =>
       />
     </div>
   );
-}
+};
 
 export default ParameterInput;
-

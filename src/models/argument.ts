@@ -1,5 +1,4 @@
 
-
 export default class Argument {
 
   public parameter: string;

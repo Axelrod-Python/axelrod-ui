@@ -87,4 +87,3 @@ class ResultPanel extends React.Component<IResultPanelProps, IResultPanelState> 
 }
 
 export default ResultPanel;
-

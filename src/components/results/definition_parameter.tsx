@@ -19,4 +19,3 @@ const DefinitionParameter = ({ label, value }: IDefinitionParameterProps) => (
 );
 
 export default DefinitionParameter;
-

@@ -43,19 +43,29 @@ class StrategyFilterCheckbox extends React.Component<IStrategyFilterCheckboxProp
     updateStrategyFilter(this.props.name, updatedStatus);
   }
 
+  public renderCheckbox(): JSX.Element {
+    const { filterValue } = this.props;
+    if (filterValue === undefined) {
+      return <DisabledCheckbox toggle={this.toggleCheckbox} />;
+    } else {
+      return (
+        <input
+          type="checkbox"
+          name={name}
+          onChange={this.toggleCheckbox}
+          checked={filterValue}
+        />
+      );
+    }
+  }
+
   public render(): JSX.Element {
     const { label, name, filterValue } = this.props;
     return (
       <div className="strategy_filter_panel__filter">
         <div className="strategy_filter_panel__label">{label}:</div>
         <div className="strategy_filter_panel__value">
-          {filterValue === undefined ? <DisabledCheckbox toggle={this.toggleCheckbox} /> :
-          <input
-            type="checkbox"
-            name={name}
-            onChange={this.toggleCheckbox}
-            checked={filterValue}
-          />}
+          {this.renderCheckbox()}
         </div>
       </div>
     );

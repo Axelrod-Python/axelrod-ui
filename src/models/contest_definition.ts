@@ -1,5 +1,4 @@
 
-
 export interface IDefinitionObject {
   created: string;
   last_updated: string;

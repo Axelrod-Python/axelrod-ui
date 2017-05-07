@@ -39,8 +39,9 @@ const Display = ({ location }: IDisplayProps) => {
 };
 
 function mapStateToProps(state: IReduxState): any {
+  const { location } = state.router;
   return {
-    location: state.router.location.pathname,
+    location: location ? location.pathname : undefined,
   };
 }
 

@@ -19,4 +19,3 @@ const SubmitResults = ({ contest, target }: ISubmitResultsProps) => (
 );
 
 export default SubmitResults;
-

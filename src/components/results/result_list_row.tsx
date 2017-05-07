@@ -38,4 +38,3 @@ const ResultListItem = ({ result }: IResultListItemProps) => {
 };
 
 export default ResultListItem;
-

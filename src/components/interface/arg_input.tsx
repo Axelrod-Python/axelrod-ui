@@ -11,7 +11,6 @@ export interface IArgInputProps {
   updateStrategyParameter?: (uuid: string, name: string, value: string) => IAction;
 }
 
-
 class ArgInput extends React.Component<IArgInputProps, {}> {
 
   constructor(props: IArgInputProps) {
@@ -47,4 +46,3 @@ class ArgInput extends React.Component<IArgInputProps, {}> {
 }
 
 export default connect<{}, {}, IArgInputProps>(null, { updateStrategyParameter })(ArgInput);
-

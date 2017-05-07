@@ -7,7 +7,7 @@ import { IData } from '../constants/interfaces';
 import Result from '../models/result';
 
 // tslint:disable-next-line:no-var-requires
-const renderParetoChart = require('./barchart.js').default;
+const renderParetoChart = require('./barchart').default;
 
 export interface IParetoProps {
   data: IData[];

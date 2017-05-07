@@ -11,4 +11,3 @@ const NotImplemented = ({ type }: INotImplementedProps) => (
 );
 
 export default NotImplemented;
-

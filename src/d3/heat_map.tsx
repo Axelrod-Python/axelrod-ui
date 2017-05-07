@@ -5,7 +5,7 @@ import { findDOMNode } from 'react-dom';
 
 import { IData } from '../constants/interfaces';
 import Result from '../models/result';
-import heatmap from './heatmap.js';
+import heatmap from './heatmap';
 
 interface IHeatMapData {
   x: number;
@@ -22,7 +22,6 @@ export interface IHeatMapProps {
 export interface IHeatMapState {
   visible: boolean;
 }
-
 
 class HeatMapChart extends React.Component<IHeatMapProps, IHeatMapState> {
 

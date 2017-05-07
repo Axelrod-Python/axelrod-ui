@@ -12,4 +12,3 @@ const Warning = ({ message }: IWarningProps) => (
 );
 
 export default Warning;
-

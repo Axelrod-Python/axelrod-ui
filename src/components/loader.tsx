@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-
 const Loader = () => (
 <svg width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" className="uil-spin">
   <rect x="0" y="0" width="100" height="100" fill="none" className="bk" />

@@ -22,4 +22,3 @@ const DefinitionInfo = ({ definition, type }: IDefinitionInfoProps) => {
 };
 
 export default DefinitionInfo;
-

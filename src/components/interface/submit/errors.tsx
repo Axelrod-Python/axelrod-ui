@@ -14,4 +14,3 @@ const Errors = ({ errors }: IErrorsProps) => (
 );
 
 export default Errors;
-

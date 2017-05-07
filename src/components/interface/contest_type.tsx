@@ -30,5 +30,3 @@ const ContestType = ({ contest, selectContestType }: IContestListProps) => {
 export default connect<{}, {}, IContestListProps>(null,
   { selectContestType }
 )(ContestType);
-
-

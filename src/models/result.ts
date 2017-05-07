@@ -2,7 +2,6 @@ import { IData } from '../constants/interfaces';
 import Argument from './argument';
 import Definition from './contest_definition';
 
-
 export interface IResultObject {
   id: number;
   contest: string;

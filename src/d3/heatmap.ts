@@ -1,11 +1,12 @@
+// tslint:disable
 const d3 = require('d3');
 
-function renderHeatMap(selector, options) {
+function renderHeatMap(selector: any, options: any) {
 
   let { xLabels, yLabels, data, elementWidth } = options;
 
-  const maxX = data.reduce((max, c) => c.x > max ? c.x : max, 1);
-  const maxY = data.reduce((max, c) => c.y > max ? c.y : max, 1);
+  const maxX = data.reduce((max: any, c: any) => c.x > max ? c.x : max, 1);
+  const maxY = data.reduce((max: any, c: any) => c.y > max ? c.y : max, 1);
 
 
   var margin = { top: 50, right: 0, bottom: 100, left: 125 },
@@ -25,9 +26,9 @@ function renderHeatMap(selector, options) {
     var xAxis = svg.selectAll(".dayLabel")
         .data(xLabels)
         .enter().append("text")
-          .text(function (d) { return d; })
+          .text(function (d: any) { return d; })
           .attr("x", 0)
-          .attr("y", function (d, i) { return i * gridSize; })
+          .attr("y", function (d: any, i: any) { return i * gridSize; })
           .style("text-anchor", "end")
           .style("font-size", `${gridSize / 10}px`)
           .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
@@ -35,8 +36,8 @@ function renderHeatMap(selector, options) {
     var yAxis = svg.selectAll(".timeLabel")
         .data(yLabels)
         .enter().append("text")
-          .text((d) => { return d; })
-          .attr("x", function(d, i) { return i * gridSize; })
+          .text((d: any) => { return d; })
+          .attr("x", function(d: any, i: any) { return i * gridSize; })
           .attr("y", 0)
           .style("text-anchor", "middle")
           .style("font-size", `${gridSize / 10}px`)
@@ -44,17 +45,17 @@ function renderHeatMap(selector, options) {
 
     var heatmapChart = function() {
       var colorScale = d3.scale.quantile()
-          .domain([0, d3.max(data, d => d.value)])
+          .domain([0, d3.max(data, (d: any) => d.value)])
           .range(colors);
       
       var cards = svg.selectAll(".hour")
-          .data(data, (d) => d.y+':'+d.x);
+          .data(data, (d: any) => d.y+':'+d.x);
 
       cards.append("title");
 
       cards.enter().append("rect")
-          .attr("x", (d) => { return (d.x - 1) * gridSize; })
-          .attr("y", (d) => { return (d.y - 1) * gridSize; })
+          .attr("x", (d: any) => { return (d.x - 1) * gridSize; })
+          .attr("y", (d: any) => { return (d.y - 1) * gridSize; })
           .attr("rx", 4)
           .attr("ry", 4)
           .attr("class", "hour bordered")
@@ -63,30 +64,30 @@ function renderHeatMap(selector, options) {
           .style("fill", colors[0]);
 
       cards.transition().duration(1000)
-          .style("fill", (d) => { return colorScale(d.value); });
+          .style("fill", (d: any) => { return colorScale(d.value); });
 
-      cards.select("title").text((d) => { return d.value; });
+      cards.select("title").text((d: any) => { return d.value; });
       
       cards.exit().remove();
 
 
       var legend = svg.selectAll(".legend")
-          .data([0].concat(colorScale.quantiles()), (d) => { return d; });
+          .data([0].concat(colorScale.quantiles()), (d: any) => { return d; });
 
       legend.enter().append("g")
           .attr("class", "legend");
 
       legend.append("rect")
-        .attr("x", function(d, i) { return legendElementWidth * i; })
+        .attr("x", function(d: any, i: any) { return legendElementWidth * i; })
         .attr("y", height)
         .attr("width", legendElementWidth)
         .attr("height", 40)
-        .style("fill", function(d, i) { return colors[i]; });
+        .style("fill", function(d: any, i: any) { return colors[i]; });
 
       legend.append("text")
         .attr("class", "mono")
-        .text((d) => { return "≥ " + d.toFixed(1); })
-        .attr("x", (d, i) => legendElementWidth * i + 20)
+        .text((d: any) => { return "≥ " + d.toFixed(1); })
+        .attr("x", (d: any, i: any) => legendElementWidth * i + 20)
         .attr("y", height + 25)
         .style("font-size", '15px');
 

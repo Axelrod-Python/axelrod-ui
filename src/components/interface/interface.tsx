@@ -84,7 +84,7 @@ function mapStateToProps(state: IReduxState, ownProps: any): {} {
   };
 }
 
-const InterfaceContainer = connect<{}, {}, IInterfaceProps>(mapStateToProps,{
+const InterfaceContainer = connect<{}, {}, IInterfaceProps>(mapStateToProps, {
   selectContestType,
 })(Interface);
 

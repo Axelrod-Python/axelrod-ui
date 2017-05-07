@@ -1,7 +1,8 @@
+// tslint:disable
 const d3 = require('d3');
 
 
-function renderBarChart(selector, data, options = {}) {
+function renderBarChart(selector: any, data: any, options: any = {}) {
   const { height, width, barWidth, margins, showAxis, showCdf } = options;
 
   const m = margins || {top: 50, right: 50, bottom: 50, left: 50};
@@ -33,10 +34,10 @@ function renderBarChart(selector, data, options = {}) {
 
     //Axes and scales
     var xScale = d3.scale.ordinal().rangeRoundBands([0, w], 0.1);
-    xScale.domain(data.map(function(d) { return d.Category; }));
+    xScale.domain(data.map(function(d: any) { return d.Category; }));
 
     var yhist = d3.scale.linear()
-                    .domain([0, d3.max(data, function(d) { return d.Amount; })])
+                    .domain([0, d3.max(data, function(d: any) { return d.Amount; })])
                     .range([h, 0]);
 
     var ycum = d3.scale.linear().domain([0, 1]).range([h, 0]);
@@ -78,13 +79,13 @@ function renderBarChart(selector, data, options = {}) {
     .style("visibility", "hidden")
 
   bar.append("rect")
-      .attr("x", function(d) { return xScale(d.Category); })
+      .attr("x", function(d: any) { return xScale(d.Category); })
       .attr("width", xScale.rangeBand())
-      .attr("y", function(d) { return yhist(d.Amount); })
-      .attr("height", function(d) { return h - yhist(d.Amount); })
+      .attr("y", function(d: any) { return yhist(d.Amount); })
+      .attr("height", function(d: any) { return h - yhist(d.Amount); })
       .attr('fill', '#000000')
       .attr('stroke', '#1B2838')
-      .on("mouseover", (d) => {
+      .on("mouseover", (d: any) => {
         tooltip.style("visibility", "visible");
         tooltip.style("opacity", "1");
         tooltip.text(`${d.Category}: ${d.Amount.toFixed(1)}`);
@@ -99,8 +100,8 @@ function renderBarChart(selector, data, options = {}) {
   // Draw CDF line
   if (showCdf) {
     var guide = d3.svg.line()
-                  .x(function(d) { return xScale(d.Category); })
-                  .y(function(d){ return ycum(d.CumulativePercentage) })
+                  .x(function(d: any) { return xScale(d.Category); })
+                  .y(function(d: any){ return ycum(d.CumulativePercentage) })
                   .interpolate('basis');
 
     var line = svg.append('path')

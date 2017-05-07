@@ -48,7 +48,7 @@ class StrategyList extends React.Component<IStrategyListProps, IStrategyListStat
     this.toggleFilter = this.toggleFilter.bind(this);
   }
 
-  public componentWillMount(): void {
+  public componentDidMount(): void {
     this.handleResize();
     window.onresize = () => this.handleResize();
   }
@@ -167,7 +167,7 @@ class StrategyList extends React.Component<IStrategyListProps, IStrategyListStat
     return (
       <Infinite
         className="strategy_list__infinite"
-        containerHeight={this.state.containerHeight}
+        containerHeight={this.state.containerHeight || '100px'}
         elementHeight={41}
       >
         {strategies.map(({ key, style, data }: any) =>

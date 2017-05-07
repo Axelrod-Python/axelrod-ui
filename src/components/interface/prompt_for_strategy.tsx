@@ -7,4 +7,3 @@ const PromptForStrategy = () => (
 );
 
 export default PromptForStrategy;
-

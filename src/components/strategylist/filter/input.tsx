@@ -48,7 +48,7 @@ class StrategyFilterInput extends React.Component<IStrategyFilterInputProps, ISt
     return (
       <div className={`strategy_filter_panel__filter ${below ? 'filter__below' : ''}`} >
         {label ? <div className="strategy_filter_panel__label">{label}:</div> : undefined}
-        {!label ? <i className="material-icons strategy_filter__search">search</i>: undefined}
+        {!label ? <i className="material-icons strategy_filter__search">search</i> : undefined}
         <div className="strategy_filter_panel__value" id={id ? id : ''}>
           <input
             type="text"

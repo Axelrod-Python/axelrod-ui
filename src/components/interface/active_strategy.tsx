@@ -31,4 +31,3 @@ const ActiveStrategy = ({ index, removeStrategyFromInterface, strategy }: ISelec
 };
 
 export default connect<{}, {}, ISelectedStrategyProps>(null, { removeStrategyFromInterface })(ActiveStrategy);
-

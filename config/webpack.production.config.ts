@@ -6,8 +6,6 @@ import * as path from 'path';
 import * as webpack from 'webpack';
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const appconfig = require('../package.json');
-promise.polyfill();
 
 const configuration: webpack.Configuration = {
   devtool: 'hidden-source-map',
@@ -16,7 +14,7 @@ const configuration: webpack.Configuration = {
   ],
   output: {
     path: path.join(__dirname, '../dist'),
-    filename: 'bundle.min.' + appconfig.version + '.js',
+    filename: 'bundle.min.js',
     publicPath: '/dist/',
   },
   plugins: [
@@ -26,12 +24,12 @@ const configuration: webpack.Configuration = {
       },
     }),
     new ExtractTextPlugin({
-      filename: '/bundle.min.' + appconfig.version + '.css',
+      filename: '/bundle.min.css',
       allChunks: true,
     }),
     new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ] } }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
   module: {
     rules: [

@@ -17,10 +17,7 @@ export interface IStrategyContainerProps {
   strategyBeingDragged?: boolean;
 }
 
-export interface IStrategyContainerState {
-}
-
-class StrategyContainer extends React.Component<IStrategyContainerProps, IStrategyContainerState> {
+class StrategyContainer extends React.Component<IStrategyContainerProps, {}> {
 
   constructor(props: IStrategyContainerProps) {
     super(props);
