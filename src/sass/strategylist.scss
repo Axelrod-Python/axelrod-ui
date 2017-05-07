@@ -1,11 +1,14 @@
 @import "./style.scss";
 
 .strategy_list__container {
-  position: fixed;
   width: 290px;
   padding-right: 10px;
   background: $primary;
   opacity: 0.8;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 }
 
 .strategy_list_item__container {

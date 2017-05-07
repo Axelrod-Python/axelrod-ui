@@ -5,7 +5,7 @@ import Display from './display';
 
 const Navbar = () => (
   <div className="navbar__container" >
-    <div id="navbar__right" className="navbar__inner-container">
+    <div id="navbar__inner-container">
       <div className="navbar__link">
         <i className="material-icons">home</i>
         <Link to="/">

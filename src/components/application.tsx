@@ -9,6 +9,7 @@ import { fetchMatches, fetchMoranProcesses, fetchStrategies,
 import { IAction } from '../constants/interfaces';
 import Main from './main';
 import Navbar from './navbar';
+import StrategyList from './strategylist/list';
 
 declare const window: any;
 
@@ -27,8 +28,12 @@ class Application extends React.Component<IApplicationProps, {}> {
     this.props.fetchMoranProcesses();
     this.props.fetchTournaments();
 
+    if (!window.__PRELOADED_STATE__) {
+      this.props.fetchStrategies();
+    }
+
     // remove the application loader from the dom
-    const loader = document.getElementById('app-loader');
+    const loader = document.getElementById('app-loading');
     if (loader) {
       loader.remove();
     }
@@ -37,8 +42,11 @@ class Application extends React.Component<IApplicationProps, {}> {
   public render() {
     return (
       <div className="application-container">
-        <Navbar />
-        <Main />
+        <StrategyList />
+        <div className="main__container" >
+          <Navbar />
+          <Main />
+        </div>
       </div>
     );
   }
@@ -48,6 +56,8 @@ function mapStateToProps(state: any) {
   return {
   };
 }
+
+// 
 
 export default withRouter(connect<{}, {}, any> (mapStateToProps, {
   fetchMatches,

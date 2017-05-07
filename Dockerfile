@@ -7,10 +7,10 @@ ADD . /axelrodui
 
 # Install dependencies
 RUN yarn
+RUN npm rebuild node-sass
 
 # Build the app
 RUN npm run production
-RUN npm rebuild node-sass
 
 # Expose the app port
 EXPOSE 4001

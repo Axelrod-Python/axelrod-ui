@@ -2,16 +2,13 @@
 
 .navbar__container {
   z-index: 6;
-  height: $navbarheight;
-  width: calc(100% - 300px);
   background: white;
   color: $font-dark;
-  position: fixed;
-  right: 0px;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
+  justify-content: center;
 
   a {
     text-decoration: none;
@@ -19,18 +16,17 @@
   }
 }
 
-navbar__left {
-  width: 150px;
-}
 
-#navbar__right {
-  flex: 1 1 400px;
+#navbar__inner-container {
+  flex: 1 1 auto;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
   margin-right: 15px;
   position: relative;
+
+  padding: 10px 0px;
 }
 
 .navbar__link {
@@ -43,17 +39,12 @@ navbar__left {
 }
 
 .display__container {
-  position: fixed;
   height: 40px;
-  top: $navbarheight;
-  width: calc(100% - 300px);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   border-top: 1px solid lighten($outline, 30%);
   background: white;
-  min-width: 340px;
-
   box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
 
   a {

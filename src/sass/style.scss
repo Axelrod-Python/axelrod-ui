@@ -13,11 +13,11 @@ $boxshadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.24);
 body, html {
   margin: 0px;
   font-family: 'Roboto', sans-serif;
+  overflow-y: hidden;
 }
 
 body {
   background: url(https://res.cloudinary.com/dvr87tqip/image/upload/v1493857890/grid_xpql7s.png);
-  min-width: 700px;
 }
 
 input {
@@ -53,12 +53,7 @@ button:focus {
 }
 
 @mixin content-container() {
-  width: 100%;
   background: white;
-
-  @media(min-width: 1000px) {
-    max-width: 1000px;
-  }
 }
 
 #app-loading {
@@ -79,16 +74,24 @@ button:focus {
   opacity: 1 !important;
 }
 
-.main__container {
+.application-container {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.main__container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .main__content-container {
-  margin: 90px 0px 0px 300px;
-  min-height: calc(100vh - 90px);
   display: flex;
-  width: 100%;
   justify-content: center;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  background: white;
 }
 
 .content__description {
@@ -106,10 +109,6 @@ button:focus {
     opacity: 0.5;
   }
 }
-
-
-
-
 
 
   svg {

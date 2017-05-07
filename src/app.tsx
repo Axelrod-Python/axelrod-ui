@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
@@ -39,7 +41,6 @@ if (process.env.NODE_ENV === 'production') {
   preloadedState.strategy.strategies =  preloadedState.strategy.strategies.map((object: any) => (
     new Strategy(object)
   ));
-  delete window.__PRELOADED_STATE__;
 
   store =  createStoreWithMiddleware(reducers, preloadedState);
 
@@ -56,4 +57,4 @@ const App = () => (
   </Provider>
 );
 
-export default App;
+export default DragDropContext(HTML5Backend)(App);

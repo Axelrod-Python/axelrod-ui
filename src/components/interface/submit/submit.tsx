@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { clearInterfaceStrategies, fetchTournaments,
   storeContestResults } from '../../../actions';
 import { IAction, IReduxState } from '../../../constants/interfaces';
+import { API } from '../../../constants/types';
 import Contest from '../../../models/contest';
 import Strategy from '../../../models/strategy';
 import Errors from './errors';
@@ -82,7 +83,7 @@ class Submit extends React.Component<ISubmitProps, ISubmitState> {
     };
     const endpoint = this.getEndpoint(activeContest.name);
     this.setState({ loading: true });
-    axios.post(`http://localhost:8000/${endpoint}/`, postData)
+    axios.post(`${API}/${endpoint}/`, postData)
     .then((res: any) => {
       this.setState({
         errors: undefined,

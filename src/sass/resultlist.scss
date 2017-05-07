@@ -11,11 +11,10 @@
   background: white;
 }
 
-
 .result_list__table {
-  flex: 1 1 auto;
-  @include content-container();
   margin-top: 25px;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .result_list__header {
