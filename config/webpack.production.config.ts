@@ -27,6 +27,13 @@ const configuration: webpack.Configuration = {
       filename: '/bundle.min.css',
       allChunks: true,
     }),
+
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+        drop_console: true,
+      },
+    }),
     new webpack.LoaderOptionsPlugin({ options: { postcss: [ autoprefixer ] } }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/),
     // new BundleAnalyzerPlugin(),
